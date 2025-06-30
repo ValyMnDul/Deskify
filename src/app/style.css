@@ -13,27 +13,8 @@ body,html{
     width: 100vw;
 }
 
-.topbar{
-    width: 100vw;
-    height: 35px;
-    background-color: #212529;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
-.topbar > p{
-    font-size: 1.2em;
-    color: aliceblue;
-}
-
-.taskbar{
+.desktop{
+    height: 100%;
     width: 100vw;
-    height: 80px;
-    background-color: #343a40;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
 }

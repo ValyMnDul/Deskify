@@ -1,0 +1,7 @@
+.taskbar{
+    width: 100vw;
+    height: 80px;
+    background-color: #343a40;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

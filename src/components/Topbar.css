@@ -1,0 +1,48 @@
+.topbar{
+    width: 100vw;
+    height: 35px;
+    background-color: #212529;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.topbar > .clock{
+    position: relative;
+}
+
+.topbar > .clock > p{
+    font-size: 1.2em;
+    color: aliceblue;
+    padding: 0 10px;
+    border-radius: 10px;
+    cursor:default;
+    user-select: none;
+}
+
+.topbar > .clock > p:hover{
+    background-color: #343a40;
+}
+
+.topbar > .clock > p:active{
+    background-color: #2f3338;
+}
+
+.topbarMenu{
+    transform: translateY(-250px);
+    position: absolute;
+    top:40px;
+    left:-100px;
+    width: 400px;
+    height: 200px;
+    background-color: #343a40;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.topbar > .clock:active .topbarMenu{
+    transform: translateY(0);
+}
