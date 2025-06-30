@@ -1,0 +1,39 @@
+body,html{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #868e96;
+}
+
+.container{
+    background-color: #868e96;
+    height: 100%;
+    width: 100vw;
+}
+
+.topbar{
+    width: 100vw;
+    height: 35px;
+    background-color: #212529;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.topbar > p{
+    font-size: 1.2em;
+    color: aliceblue;
+}
+
+.taskbar{
+    width: 100vw;
+    height: 80px;
+    background-color: #343a40;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
