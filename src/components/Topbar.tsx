@@ -144,33 +144,41 @@ export default function Topbar(){
     return(
         <div className='topbar'>
             <div className='clock'>
-                <p onClick={clock}>{format0(month)}/{format0(day)}/{year} &nbsp; {format0(hour)}:{format0(minute)}:{format0(second)}</p>
+                <p onClick={clock}>
+                    {monthOptionValue ? ( dayOptionValue || yearOptionValue ? format0(month)+'/':format0(month)):null}
+                    {dayOptionValue ? (yearOptionValue ? format0(day)+'/':format0(day)):null}
+                    {yearOptionValue? year:null}
+                    &nbsp;
+                    {hourOptionValue ? (secondOptionValue || minuteOptionValue ? format0(hour)+':':format0(hour)):null}
+                    {minuteOptionValue ? (secondOptionValue ? format0(minute)+':':format0(minute)):null}
+                    {secondOptionValue ? format0(second):null}
+                </p>
                 {top ? <div className='topbarMenu'>
                     <div>
                         <div className='topbarOption'>
-                            <div ref={dayOption} onClick={()=>{optionPressed('day')}}><div></div></div>
-                            <p>Day</p>
-                        </div>
-                        <div className='topbarOption'>
-                            <div ref={monthOption} onClick={()=>{optionPressed('month')}}><div></div></div>
+                            <div className={monthOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={monthOption} onClick={()=>{optionPressed('month')}}><div></div></div>
                             <p>Month</p>
                         </div>
                         <div className='topbarOption'>
-                            <div ref={yearOption} onClick={()=>{optionPressed('year')}}><div></div></div>
+                            <div className={dayOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={dayOption} onClick={()=>{optionPressed('day')}}><div></div></div>
+                            <p>Day</p>
+                        </div>
+                        <div className='topbarOption'>
+                            <div className={yearOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={yearOption} onClick={()=>{optionPressed('year')}}><div></div></div>
                             <p>Year</p>
                         </div>
                     </div>
                     <div>
                         <div className='topbarOption'>
-                            <div ref={secondOption} onClick={()=>{optionPressed('second')}}><div></div></div>
+                            <div className={secondOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={secondOption} onClick={()=>{optionPressed('second')}}><div></div></div>
                             <p>Second</p>
                         </div>
                         <div className='topbarOption'>
-                            <div ref={minuteOption} onClick={()=>{optionPressed('minute')}}><div></div></div>
+                            <div className={minuteOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={minuteOption} onClick={()=>{optionPressed('minute')}}><div></div></div>
                             <p>Minute</p>
                         </div>
                         <div className='topbarOption'>
-                            <div ref={hourOption} onClick={()=>{optionPressed('hour')}}><div></div></div>
+                            <div className={hourOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={hourOption} onClick={()=>{optionPressed('hour')}}><div></div></div>
                             <p>Hour</p>
                         </div>
                     </div>

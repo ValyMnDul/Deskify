@@ -77,11 +77,19 @@
     height: 37px;
     border-radius: 20px;
     display: flex;
-    justify-content: flex-end;
-    background-color: rgb(176, 98, 98);
     align-items: center;
     padding: 5px;
     transition: all 0.2s ease-in;
+}
+
+.optionEnabled{
+    justify-content: flex-end;
+    background-color: rgb(176, 98, 98);
+}
+
+.optionDisabled{
+    justify-content: flex-start;
+    background-color: aliceblue;
 }
 
 .topbarOption > div > div{
