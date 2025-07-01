@@ -31,6 +31,7 @@
     border-radius: 10px;
     cursor:default;
     user-select: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .topbar > .clock > p:hover{
@@ -43,6 +44,10 @@
 
 .topbarMenu{
     position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     top:40px;
     left:-100px;
     width: 400px;
@@ -50,4 +55,38 @@
     background-color: #343a40;
     border-radius: 20px;
     animation:topbarMenu 0.1s ease-in;
+}
+
+
+.topbarOption{
+    margin: 20px;
+    display: flex;
+    column-gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.topbarOption >p{
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+}
+
+.topbarOption > div{
+    width: 65px;
+    height: 37px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(176, 98, 98);
+    align-items: center;
+    padding: 5px;
+    transition: all 0.2s ease-in;
+}
+
+.topbarOption > div > div{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:#343a40;
 }
