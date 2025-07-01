@@ -1,3 +1,13 @@
+@keyframes topbarMenu{
+    0%{
+        transform: translateY(-250px);
+    }
+    
+    100%{
+        transform: translateY(0px);
+    }
+}
+
 .topbar{
     width: 100vw;
     height: 35px;
@@ -32,7 +42,6 @@
 }
 
 .topbarMenu{
-    transform: translateY(-250px);
     position: absolute;
     top:40px;
     left:-100px;
@@ -40,9 +49,5 @@
     height: 200px;
     background-color: #343a40;
     border-radius: 20px;
-    transition: all 0.2s ease-in-out;
-}
-
-.topbar > .clock:active .topbarMenu{
-    transform: translateY(0);
+    animation:topbarMenu 0.1s ease-in;
 }

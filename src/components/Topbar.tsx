@@ -30,13 +30,16 @@ export default function Topbar(){
 
     },[]);
 
+    const [top,setTop]=useState(false);
+    const clock=()=>{
+        setTop((p)=>(!p));
+    };
+
     return(
         <div className='topbar'>
-            <div className='clock'>
+            <div className='clock' onClick={clock}>
                 <p>{format0(month)}/{format0(day)}/{year} &nbsp; {format0(hour)}:{format0(minute)}:{format0(second)}</p>
-                <div className='topbarMenu'>
-
-                </div>
+                {top ? <div className='topbarMenu'></div> : null}
             </div>
         </div>
     );
