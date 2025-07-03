@@ -58,12 +58,10 @@ export default function Topbar(){
             case 'day':
                 if(dayOption.current) {
                     if(!dayOptionValue){
-                        dayOption.current.style.justifyContent="flex-end";
-                        dayOption.current.style.backgroundColor="rgb(176, 98, 98)";
+                        dayOption.current.classList.add('optionEnabled');
                     }
                     else{
-                        dayOption.current.style.justifyContent="flex-start";
-                        dayOption.current.style.backgroundColor="aliceblue";
+                        dayOption.current.classList.add('optionDisabled');
                     }
                 }
                 setDayOptionValue((p)=>(!p));
@@ -72,12 +70,10 @@ export default function Topbar(){
             case 'month':
                 if(monthOption.current){
                     if(monthOptionValue){
-                        monthOption.current.style.justifyContent="flex-start";
-                        monthOption.current.style.backgroundColor="aliceblue";
+                        monthOption.current.classList.add('optionEnabled');
                     }
                     else{
-                        monthOption.current.style.justifyContent="flex-end";
-                        monthOption.current.style.backgroundColor="rgb(176, 98, 98)";
+                        monthOption.current.classList.add('optionDisabled');
                     }
                 }
                 setMonthOptionValue((p)=>(!p));
@@ -86,12 +82,10 @@ export default function Topbar(){
             case 'year':
                 if(yearOption.current){
                     if(yearOptionValue){
-                        yearOption.current.style.justifyContent="flex-start";
-                        yearOption.current.style.backgroundColor="aliceblue";
+                        yearOption.current.classList.add('optionEnabled');
                     }
                     else{
-                        yearOption.current.style.justifyContent="flex-end";
-                        yearOption.current.style.backgroundColor="rgb(176,98,98)";
+                        yearOption.current.classList.add('optionDisabled');
                     }
                 }
                 setYearOptionValue((p)=>(!p));
@@ -100,12 +94,10 @@ export default function Topbar(){
             case 'second':
                 if(secondOption.current){
                     if(secondOptionValue){
-                        secondOption.current.style.justifyContent="flex-start";
-                        secondOption.current.style.backgroundColor="aliceblue";
+                        secondOption.current.classList.add('optionEnabled');
                     }
                     else{
-                        secondOption.current.style.justifyContent="flex-end";
-                        secondOption.current.style.backgroundColor="rgb(176,98,98)";
+                        secondOption.current.classList.add('optionDisabled');
                     }
                 }
                 setSecondOptionValue((p)=>(!p));
@@ -114,45 +106,62 @@ export default function Topbar(){
             case 'minute':
                 if(minuteOption.current){
                     if(minuteOptionValue){
-                        minuteOption.current.style.justifyContent="flex-start";
-                        minuteOption.current.style.backgroundColor="aliceblue";
+                        minuteOption.current.classList.add("optionEnabled");
                     }
                     else{
-                        minuteOption.current.style.justifyContent="flex-end";
-                        minuteOption.current.style.backgroundColor="rgb(176,98,98)";
+                        minuteOption.current.classList.add("optionDisabled");
                     }
                 }
                 setMinuteOptionValue((p)=>(!p));
                 break;
-
             case 'hour':
                 if(hourOption.current){
                     if(hourOptionValue){
-                        hourOption.current.style.justifyContent="flex-start";
-                        hourOption.current.style.backgroundColor="aliceblue";
+                        hourOption.current.classList.add('optionEnabled');
                     }
                     else{
-                        hourOption.current.style.justifyContent="flex-end";
-                        hourOption.current.style.backgroundColor="rgb(176,98,98)";
+                        hourOption.current.classList.add('optionDisabled');
                     }
                 }
                 setHourOptionValue((p=>(!p)));
                 break;
-       }
+        }
     };
 
+    
     return(
         <div className='topbar'>
             <div className='clock'>
                 <p onClick={clock}>
-                    {monthOptionValue ? ( dayOptionValue || yearOptionValue ? format0(month)+'/':format0(month)):null}
-                    {dayOptionValue ? (yearOptionValue ? format0(day)+'/':format0(day)):null}
-                    {yearOptionValue? year:null}
+                    {monthOptionValue ? (
+                        dayOptionValue || yearOptionValue
+                        ? format0(month) + '/'
+                        : format0(month)
+                    ) : null}
+
+                    {dayOptionValue ? (
+                        yearOptionValue
+                        ? format0(day) + '/'
+                        : format0(day)
+                    ) : null}
+
+                    {yearOptionValue ? year : null}
                     &nbsp;
-                    {hourOptionValue ? (secondOptionValue || minuteOptionValue ? format0(hour)+':':format0(hour)):null}
-                    {minuteOptionValue ? (secondOptionValue ? format0(minute)+':':format0(minute)):null}
-                    {secondOptionValue ? format0(second):null}
+                    {hourOptionValue ? (
+                        secondOptionValue || minuteOptionValue
+                        ? format0(hour) + ':'
+                        : format0(hour)
+                    ) : null}
+
+                    {minuteOptionValue ? (
+                        secondOptionValue
+                        ? format0(minute) + ':'
+                        : format0(minute)
+                    ) : null}
+
+                    {secondOptionValue ? format0(second) : null}
                 </p>
+
                 {top ? <div className='topbarMenu'>
                     <div>
                         <div className='topbarOption'>

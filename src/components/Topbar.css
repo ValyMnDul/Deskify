@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    user-select: none;
 }
 
 .topbar > .clock{
@@ -42,14 +43,18 @@
     background-color: #2f3338;
 }
 
+.topbar > .clock{
+    display: flex;
+    justify-content: center;
+}
+
 .topbarMenu{
     position: absolute;
+    top:35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    top:40px;
-    left:-100px;
     width: 400px;
     height: 200px;
     background-color: #343a40;
