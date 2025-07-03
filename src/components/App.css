@@ -20,11 +20,15 @@
 }
 
 .appWindow{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
     border-radius: 10px;
     width: 1000px;
-    height: 600px;
+    height: 600px;justify-items: auto;
     background-color:aliceblue;
-    margin: auto;
 }
 
 .appWindow > .windowTopBar{

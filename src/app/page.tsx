@@ -11,7 +11,7 @@ export default function Home(){
                 <Topbar/>
                 <div className='desktop'>
                     <App path="/note.png" text="Notes"/>
-                    {/* <App path="/settings.png" text="Settings" /> */}
+                    <App path="/settings.png" text="Settings" />
                 </div>
             </div>
             <Taskbar/>
