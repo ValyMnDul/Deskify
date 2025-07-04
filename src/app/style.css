@@ -5,6 +5,7 @@ body,html{
     flex-direction: column;
     justify-content: space-between;
     background-color: #868e96;
+    overflow:hidden;
 }
 
 .container{
@@ -13,9 +14,48 @@ body,html{
     width: 100vw;
 }
 
-
 .desktop{
     height: 100%;
     width: 100vw;
     padding: 10px;
+}
+
+.rightClickMenu{
+    user-select: none;
+    position:absolute;
+    display: none;
+    width: 200px;
+    height: 300px;
+    background-color:#3b4045;
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.rightClickMenu > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    row-gap: 10px;
+}
+
+.rightClickMenu > div > div{
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.rightClickMenu > div > div:hover{
+    background-color: #868e96;
+}
+
+.rightClickMenu > p{
+    color:antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 1.1em;
 }

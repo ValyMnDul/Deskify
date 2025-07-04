@@ -20,15 +20,15 @@
 }
 
 .appWindow{
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     display: none;
     border-radius: 10px;
     width: 1000px;
-    height: 600px;justify-items: auto;
+    height: 600px;
     background-color:aliceblue;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .appWindow > .windowTopBar{
@@ -61,6 +61,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.appWindow > .windowTopBar > div > .windowButton:hover{
+    opacity: .8;
+}
+
 .appWindow > .windowTopBar > p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: aliceblue;
@@ -70,4 +74,8 @@
     background-color: #777c81;
     border-radius: 5px;
     margin-right: 58px;
+}
+
+.appWindow > .content{
+    height: 100%;
 }

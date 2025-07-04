@@ -53,6 +53,25 @@ export default function Topbar(){
         setTop((p)=>(!p));
     };
 
+    const topbarMenu=useRef<HTMLDivElement|null>(null);
+    const clockButtonRef = useRef<HTMLParagraphElement | null>(null);
+    const clickOutside = (e: MouseEvent) => {
+        const target = e.target as Node;
+
+        const clickedOutsideMenu = topbarMenu.current && !topbarMenu.current.contains(target);
+        const clickedOutsideButton = clockButtonRef.current && !clockButtonRef.current.contains(target);
+
+        if (clickedOutsideMenu && clickedOutsideButton) {
+            setTop(false);
+        }
+    };
+
+
+    useEffect(()=>{
+        document.addEventListener("mousedown", clickOutside);
+        return () => document.removeEventListener("mousedown", clickOutside);
+    },[]);
+
     const optionPressed=(input:string)=>{
        switch(input){
             case 'day':
@@ -132,7 +151,7 @@ export default function Topbar(){
     return(
         <div className='topbar'>
             <div className='clock'>
-                <p onClick={clock}>
+                <p ref={clockButtonRef} onClick={clock}>
                     {monthOptionValue ? (
                         dayOptionValue || yearOptionValue
                         ? format0(month) + '/'
@@ -162,7 +181,7 @@ export default function Topbar(){
                     {secondOptionValue ? format0(second) : null}
                 </p>
 
-                {top ? <div className='topbarMenu'>
+                {top ? <div className='topbarMenu' ref={topbarMenu}>
                     <div>
                         <div className='topbarOption'>
                             <div className={monthOptionValue ? 'optionEnabled' : 'optionDisabled'} ref={monthOption} onClick={()=>{optionPressed('month')}}><div></div></div>
