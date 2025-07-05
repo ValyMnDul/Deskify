@@ -1,17 +1,25 @@
 'use client';
 import './App.css';
-import { ZIndex } from '@/th1ngs/ZIndex';
-import Notes from "@/components/apps/Notes";
+
+import { useRef, useState ,useEffect} from 'react';
+import Image from 'next/image';
 import { FaRegWindowMinimize } from "react-icons/fa";
 import { PiResizeBold } from "react-icons/pi";
-import Image from 'next/image';
-import { useRef, useState ,useEffect} from 'react';
+
+import Notes from "@/components/apps/Notes";
+import Settings from './apps/Settings';
+import { ZIndex } from '@/th1ngs/ZIndex';
+
+
+
 export default function App({path,text}:{path:string,text:string}){
 
     const [position,setPosition]=useState({x:100,y:100});
     const [offset,setOffset]=useState({x:0,y:0});
     const [isDragging,setIsDragging]=useState(false);
     const [zindex,setZindex]=useState(0);
+    const appWindow=useRef<HTMLDivElement|null>(null);
+
 
     const mouseDown=(e:React.MouseEvent)=>{
         if(appWindow.current){
@@ -56,9 +64,6 @@ export default function App({path,text}:{path:string,text:string}){
         };
     });
 
-
-    const appWindow=useRef<HTMLDivElement|null>(null);
-
     const appPress = () => {
     if (appWindow.current) {
             setZindex(ZIndex);
@@ -71,24 +76,34 @@ export default function App({path,text}:{path:string,text:string}){
         if(appWindow.current)
         {
             appWindow.current.style.display="none";
+            if(document.fullscreenElement){
+                document.exitFullscreen();
+            } 
         }
     }
 
     const sizeButtonPress=()=>{
-
+        if(appWindow.current){
+            if(!document.fullscreenElement){
+                appWindow.current.requestFullscreen();
+            }
+            else{
+                document.exitFullscreen();
+            }
+        }
     }
 
     const minimizeButtonPressed=()=>{
 
     }
 
-    function apps(){
+    const apps=()=>{
         switch(text){
             case 'Notes':
                 return <Notes/>
 
             case 'Settings':
-                return <div>Settings</div>;
+                return <Settings/>;
         }
     }
 
