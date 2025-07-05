@@ -4,4 +4,41 @@
     background-color: #343a40;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    text-align: center;
+}
+
+.taskbar > .start > .startButton{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 20px;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #343a40;
+    border: solid black 2px;
+    transition: all 0.15s ease-in-out;
+}
+
+.taskbar > .start > .startButton:hover{
+    background-color: rgb(159, 159, 159);
+    color:black;
+}
+
+.taskbar > .start > .startMenu{
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 580px;
+    height: 580px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 20px;
+    border:solid #343a40 2px;
 }
