@@ -1,6 +1,11 @@
 import './Taskbar.css';
-import { LuAlignVerticalDistributeStart } from "react-icons/lu";
 import {useRef,useState,useEffect} from 'react';
+
+import { LuAlignVerticalDistributeStart } from "react-icons/lu";
+import { AiOutlinePoweroff } from "react-icons/ai";
+import { PiLockKeyDuotone } from "react-icons/pi";
+import { RiRestartLine } from "react-icons/ri";
+import { MdDarkMode } from "react-icons/md";
 
 export default function Taskbar(){
 
@@ -47,7 +52,21 @@ export default function Taskbar(){
                     <LuAlignVerticalDistributeStart/>
                 </div>
                 <div className='startMenu' ref={startMenu}>
-                    
+                    <div className='apps'>
+
+                    </div>
+                    <div className='control'>
+                        <div className='left'>
+                            <div><AiOutlinePoweroff/></div>
+                            <div><RiRestartLine/></div>
+                            <div><PiLockKeyDuotone/></div>
+                        </div>
+                        <div className='right'>
+                            <div><MdDarkMode/></div>
+                            <div><MdDarkMode/></div>
+                            <div><MdDarkMode/></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

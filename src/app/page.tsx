@@ -38,8 +38,8 @@ export default function Home(){
             <div className='container' onContextMenu={(e) => e.preventDefault()}>
                 <Topbar/>
                 <div className='desktop' onMouseMove={mouseMove} onContextMenu={rightClickMenuPress}>
-                    <App path="/note.png" text="Notes"/>
                     <App path="/settings.png" text="Settings" />
+                    <App path="/note.png" text="Notes"/>
                     <div ref={rightClickMenu} className='rightClickMenu'>
                         <div>
                             <div>Option1</div>
