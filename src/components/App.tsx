@@ -36,7 +36,7 @@ export default function App({path,text}:{path:string,text:string}){
         }
     };
 
-    const mouseDownApp=(e:React.MouseEvent)=>{
+    const mouseDownApp=()=>{
         if(appWindow.current){
             setZindex(ZIndex);
             appWindow.current.style.zIndex = `${ZIndex}`;
