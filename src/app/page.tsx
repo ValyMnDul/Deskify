@@ -6,6 +6,7 @@ import Taskbar from '@/components/Taskbar';
 import {useState,useRef,useEffect} from 'react';
 import { createRoot } from 'react-dom/client';
 
+
 export default function Home(){
 
     const [coords,setCoords]=useState({x:0,y:0})
@@ -53,6 +54,7 @@ export default function Home(){
                 <div className='desktop' ref={desktop} onMouseMove={mouseMove} onContextMenu={rightClickMenuPress}>
                     <App path="/settings.png" text="Settings" />
                     <App path="/note.png" text="Notes"/>
+                    <App path="/Calculator.png" text='Calculator'/>
                     <div ref={rightClickMenu} className='rightClickMenu'>
                         <div>
                             <div onClick={newNote}>New note</div>
