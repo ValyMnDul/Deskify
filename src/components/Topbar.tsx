@@ -42,7 +42,7 @@ export default function Topbar(){
     useEffect(()=>{
         date();
 
-        const refresh=setInterval(() => {
+        setInterval(() => {
             date();
         }, 1000);
 

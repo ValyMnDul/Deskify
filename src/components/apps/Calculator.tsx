@@ -96,7 +96,7 @@ export default function Calculator(){
                     try {
                         display.current.value=eval(display.current.value.replace(/%/g, '/100')).toString();
                     } catch (error) {
-                        display.current.value='Error';
+                        display.current.value=`Error:${error}`;
                     }
                     break;
 

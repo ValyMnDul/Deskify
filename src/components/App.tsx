@@ -10,7 +10,6 @@ import Notes from "@/components/apps/Notes";
 import Settings from './apps/Settings';
 import Calculator from './apps/Calculator';
 import { ZIndex } from '@/th1ngs/ZIndex';
-import { useDynamicRouteParams } from 'next/dist/server/app-render/dynamic-rendering';
 
 
 export default function App({path,text}:{path:string,text:string}){
