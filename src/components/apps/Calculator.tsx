@@ -127,10 +127,11 @@ export default function Calculator(){
         }
     }
 
+
    return(
         <div className='calculator'>
             <div className='display'>
-                <input ref={display}></input>
+                <input readOnly ref={display}></input>
             </div>
             <div className='keys'>
                 <div onClick={()=>{keyPress('AC')}} className='top' style={{fontWeight:600}}>AC</div>

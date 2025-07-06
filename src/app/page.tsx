@@ -47,6 +47,16 @@ export default function Home(){
         }
     };
 
+    const newCalculator=()=>{
+        if(desktop.current){
+            const container=document.createElement("div")
+            desktop.current.appendChild(container);
+
+            const root=createRoot(container)
+            root.render(<App path="/Calculator.png" text="Calculator" />);
+        }
+    };
+
     return(
         <>
             <div className='container' onContextMenu={(e) => e.preventDefault()}>
@@ -58,7 +68,7 @@ export default function Home(){
                     <div ref={rightClickMenu} className='rightClickMenu'>
                         <div>
                             <div onClick={newNote}>New note</div>
-                            <div>Option2</div>
+                            <div onClick={newCalculator}>New Calculator</div>
                             <div>Option3</div>
                             <div>Option4</div>
                         </div>

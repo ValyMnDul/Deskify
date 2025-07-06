@@ -109,11 +109,6 @@ export default function App({path,text}:{path:string,text:string}){
 
             case 'Calculator':
                 if(app.current && appWindow.current) {
-                    (app.current?.firstElementChild as HTMLElement).style.width = '80px';
-                    (app.current?.firstElementChild as HTMLElement).style.height = '80px';
-                    app.current.style.rowGap="1px";
-                    app.current.style.fontSize=".9em";
-                    app.current.style.transform="TranslateY(-6px)";
                     appWindow.current.style.width="380px";
                 }
                 return <Calculator/>

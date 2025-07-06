@@ -60,6 +60,7 @@
     background-color: #343a40;
     border-radius: 20px;
     animation:topbarMenu 0.1s ease-in;
+    z-index: 100000000;
 }
 
 

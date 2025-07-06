@@ -47,7 +47,13 @@
     text-align: center;
     font-size: 2em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: default;
 }
+
+.keys > div:hover{
+    opacity: .7;
+}
+
 .keys > .top{
     background-color: rgb(196, 196, 196);
 }

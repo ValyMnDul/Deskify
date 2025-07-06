@@ -40,3 +40,8 @@
     border-bottom-right-radius: 10px;
     border-left: solid rgb(115, 115, 115) 2px;
 }
+
+.settingsApp > .settings > div > h2{
+    font-size: 2em;
+    margin: 270px;
+}
