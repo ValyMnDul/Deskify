@@ -57,8 +57,8 @@ export default function Taskbar(){
                     </div>
                     <div className='control'>
                         <div className='left'>
-                            <div><AiOutlinePoweroff/></div>
-                            <div><RiRestartLine/></div>
+                            <div onClick={() => window.location.href = "https://google.com"}><AiOutlinePoweroff/></div>
+                            <div onClick={() => window.location.reload()}><RiRestartLine/></div>
                             <div><PiLockKeyDuotone/></div>
                         </div>
                         <div className='right'>

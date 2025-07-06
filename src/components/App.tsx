@@ -11,7 +11,6 @@ import Settings from './apps/Settings';
 import { ZIndex } from '@/th1ngs/ZIndex';
 
 
-
 export default function App({path,text}:{path:string,text:string}){
 
     const [position,setPosition]=useState({x:100,y:100});

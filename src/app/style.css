@@ -14,10 +14,11 @@ body,html{
     width: 100vw;
 }
 
-.desktop{
+.desktop {
+    display:grid;
+    width: 100%;
     height: 100%;
-    width: 100vw;
-    padding: 10px;
+    grid-template-columns: repeat(19, 100px);
 }
 
 .rightClickMenu{
