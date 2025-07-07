@@ -9,6 +9,32 @@ import { createRoot } from 'react-dom/client';
 
 export default function Home(){
 
+    const firstTime=useRef<HTMLDivElement|null>(null);
+    const [value,setValue]=useState<boolean>(true);
+    useEffect(() => {
+        if (localStorage.getItem("firstTime") === null) {
+            localStorage.setItem("firstTime", "true");
+            setValue(true);
+            if(firstTime.current){
+                firstTime.current.style.display='flex';
+            }
+        }
+        else{
+            setValue(localStorage.getItem("firstTime") === "true");
+            if(firstTime.current){
+                firstTime.current.style.display='none';
+            }
+        }
+    }, []);
+
+    const firstTimeButtonPress=()=>{
+        if(firstTime.current && localStorage.getItem("firstTime")==="true"){
+            firstTime.current.style.display='none';
+            localStorage.setItem("firstTime","false");
+        }
+    }
+
+
     const [coords,setCoords]=useState({x:0,y:0})
     const rightClickMenu=useRef<HTMLDivElement|null>(null);
 
@@ -59,6 +85,13 @@ export default function Home(){
 
     return(
         <>
+            {value ? <div className='firstTime' ref={firstTime}>
+                <h1>Welcome to the Desktop!</h1>
+                <p>This is a simple desktop environment built with React. You can add apps by right-clicking on the desktop.</p>
+                <p>To get started, click the button below.</p>
+                
+                <div onClick={firstTimeButtonPress} title='PRESS!'>Get started</div>
+            </div>:null}
             <div className='container' onContextMenu={(e) => e.preventDefault()}>
                 <Topbar/>
                 <div className='desktop' ref={desktop} onMouseMove={mouseMove} onContextMenu={rightClickMenuPress}>

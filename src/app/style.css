@@ -61,3 +61,52 @@ body,html{
     text-align: center;
     font-size: 1.1em;
 }
+
+.firstTime{
+    user-select: none;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 99999999999999;
+    position: fixed;
+    background-color: #868e96;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.firstTime > h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.firstTime > p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 2px;
+    font-size: 1.3em;
+}
+
+.firstTime > div{
+    margin-top: 20px;
+    width: 200px;
+    height: 60px;
+    background-color: #3b4045;
+    border-radius: 15px;
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: default;
+    border: 2px solid #656c72;
+}
+
+.firstTime > div:hover{
+    opacity: .8;
+}
+
+
