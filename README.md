@@ -68,6 +68,3 @@ Pull requests are welcome! If you'd like to contribute or suggest features, feel
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License**.
