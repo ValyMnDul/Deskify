@@ -62,7 +62,7 @@ http://localhost:3000
   
 ---
 
-## 🤝 Contributing
+## 📤 Contributing
 
 Pull requests are welcome! If you'd like to contribute or suggest features, feel free to open an issue or fork the repo.
 
