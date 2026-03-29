@@ -28,43 +28,11 @@
 
 ---
 
-## Tech Stack
-
-- **Next.js**
-- **React**
-- **CSS (Global stylesheet, no CSS Modules)**
-
-## Getting Started
-
-Follow these steps to run Deskify locally:
-
-```bash
-# Clone the repo
-git clone https://github.com/your-username/deskify.git
-cd deskify
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-
-# Visit in your browser
-http://localhost:3000
-```
-
-## Planned Features
-
-- Custom wallpapers and themes via Settings  
-- Persistent Notes using localStorage or backend  
-- App drag and resize support  
-- Improved taskbar & window manager 
-  
----
-
 ## Contributing
 
 Pull requests are welcome! If you'd like to contribute or suggest features, feel free to open an issue or fork the repo.
 
----
+## Open Source
+
+Deskify is licensed under the [MIT LICENSE](LICENSE.md)
 
